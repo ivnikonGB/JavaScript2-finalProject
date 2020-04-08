@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Нёрдс</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div id="app">
+    <header class="main-header">
+      <nav class="main-navigation">
+        <div class="top-header container">
+          <a href="index.html" class="main-header-logo">
+            <img src="img/nerds-logo.svg" width="160" height="65" alt="Nerds logo">
+          </a>
+          <ul class="main-menu">
+            <li><a href="#">Студия</a></li>
+            <li><a href="#">Клиенты</a></li>
+            <li class="main-menu-current"><a href="#">Магазин</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+          <!-- <ul class="cart">
+            <li><a href="#">Корзина</a></li>
+          </ul> -->
+          <cart 
+            v-bind:cart-items="cartItems"
+            v-on:remove-product="removeProduct" 
+          ></cart>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1 class="catalog-title">Магазин готовых шаблонов</h1>
+
+      <div class="container">
+        <div class="main-catalog-column">
+          <section class="filter">
+            <h2 class="visually-hidden">Фильтры</h2>
+            <form action="http://echo.htmlacademy.ru" class="filter-form" method="post">
+              <fieldset class="filter-price">
+                <legend>Стоимость:</legend>
+                <div class="range-filter">
+                  <div class="range-controls">
+                    <div class="scale">
+                      <div class="bar"></div>
+                    </div>
+                    <div class="toggle toggle-min"></div>
+                    <div class="toggle toggle-max"></div>
+                  </div>
+                </div>
+                <div class="price-controls">
+                  <label class="min-price">от <input name="min-price" type="text" value="0"></label>
+                  <label class="max-price">до <input name="max-price" type="text" value="15000"></label>
+                </div>
+              </fieldset>
+              <fieldset class="filter-layout">
+                <legend>Сетка:</legend>
+                <ul>
+                  <li class="filter-option">
+                    <input class="visually-hidden filter-radio" type="radio" id="layout-adaptive" name="layout" value="adaptive" checked>
+                    <label for="layout-adaptive">Адаптивная</label>
+                  </li>
+                  <li class="filter-option">
+                    <input class="visually-hidden filter-radio" type="radio" id="layout-fixed" name="layout" value="fixed">
+                    <label for="layout-fixed">Фиксированная</label>
+                  </li>
+                  <li class="filter-option">
+                    <input class="visually-hidden filter-radio" type="radio" id="layout-rubber" name="layout" value="rubber">
+                    <label for="layout-rubber">Резиновая</label>
+                  </li>
+                </ul>
+              </fieldset>
+              <fieldset class="filter-features">
+                <legend>Особенности:</legend>
+                <ul>
+                  <li class="filter-option">
+                    <input class="visually-hidden filter-checkbox" type="checkbox" id="filter-slider" name="slider" checked>
+                    <label for="filter-slider">Слайдер</label>
+                  </li>
+                  <li class="filter-option">
+                    <input class="visually-hidden filter-checkbox" type="checkbox" id="filter-features" name="features">
+                    <label for="filter-features">Блок преимуществ</label>
+                  </li>
+                  <li class="filter-option">
+                    <input class="visually-hidden filter-checkbox" type="checkbox" id="filter-news" name="news" checked>
+                    <label for="filter-news">Новости</label>
+                  </li>
+                  <li class="filter-option">
+                    <input class="visually-hidden filter-checkbox" type="checkbox" id="filter-gallery" name="gallery">
+                    <label for="filter-gallery">Галерея</label>
+                  </li>
+                  <li class="filter-option">
+                    <input class="visually-hidden filter-checkbox" type="checkbox" id="filter-cart" name="cart">
+                    <label for="filter-cart">Корзина</label>
+                  </li>
+                </ul>
+              </fieldset>
+              <button class="button button-submit" type="submit">Показать</button>
+            </form>
+          </section>
+
+          <section class="catalog">
+            <h2 class="visually-hidden">Каталог</h2>
+            <p class="catalog-sort">
+              <span class="catalog-sort-title">Сортировать:</span>
+              <a href="#" class="sort-by active-sort-by">По цене</a>
+              <a href="#" class="sort-by">По типу</a>
+              <a href="#" class="sort-by">По названию</a>
+              <a href="#" class="sort-direction sort-down active-sort-direction">
+                <span class="visually-hidden">По убыванию</span>
+              </a>
+              <a href="#" class="sort-direction sort-up">
+                <span class="visually-hidden">По возрастанию</span>
+              </a>
+            </p>
+            <products 
+              v-bind:products="products"
+              v-on:add-product="addProduct"
+            ></products>
+            <ul class="pagination-list">
+              <li class="pagination-item-current pagination-item"><a href="#">1</a></li>
+              <li class="pagination-item"><a href="#">2</a></li>
+              <li class="pagination-item"><a href="#">3</a></li>
+              <li class="pagination-item pagination-item-next"><a href="#">Следующая</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/ProductComponent.js"></script>
+    <script src="js/CartComponent.js"></script>
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>
