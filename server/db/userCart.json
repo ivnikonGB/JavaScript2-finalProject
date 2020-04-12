@@ -1,0 +1,22 @@
+{
+    "amount": 0,
+    "countGoods": 0,
+    "contents": [
+        {
+            "quantity": 1,
+            "id": 1,
+            "title": "Sedona",
+            "description": "Информационный сайт\n для туристов",
+            "price": 9900,
+            "img": "./img/img-sedona.jpg"
+        },
+        {
+            "quantity": 1,
+            "id": 2,
+            "title": "Pink App",
+            "description": "Продуктовый лендинг приложения для iOS и Android",
+            "price": 10900,
+            "img": "./img/img-pink.jpg"
+        }
+    ]
+}
