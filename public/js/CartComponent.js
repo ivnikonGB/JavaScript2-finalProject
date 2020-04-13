@@ -44,16 +44,17 @@ const cart = {
     },
     methods: {
         addProduct(item){
-            console.log("Add Product");
-            let find = this.cartItems.find(el => el.id_product === item.id_product);
+            let find = this.cartItems.find(el => el.id === item.id);
             if(find){
-                this.$parent.putJson(`/api/cart/${find.id_product}`, {quantity: 1})
+                console.log("Exist");
+                this.$parent.putJson(`/api/cart/${find.id}`, {quantity: 1})
                     .then(data => {
                         if(data.result === 1){
                             find.quantity++
                         }
                     })
             } else {
+                console.log("New");
                 const prod = Object.assign({quantity: 1}, item);
                 this.$parent.postJson(`/api/cart`, prod)
                     .then(data => {

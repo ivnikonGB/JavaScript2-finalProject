@@ -17,6 +17,54 @@
             "description": "Продуктовый лендинг приложения для iOS и Android",
             "price": 10900,
             "img": "./img/img-pink.jpg"
+        },
+        {
+            "quantity": 1,
+            "id": 3,
+            "title": "Barbershop",
+            "description": "Сайт салона красоты. Для мужчин, да.",
+            "price": 12900,
+            "img": "./img/img-barbershop.jpg"
+        },
+        {
+            "quantity": 1,
+            "id": 4,
+            "title": "Mishka",
+            "description": "Интернет-магазин вязаных игрушек",
+            "price": 8900,
+            "img": "./img/img-mishka.jpg"
+        },
+        {
+            "quantity": 1,
+            "id": 6,
+            "title": "Кваст",
+            "description": "Промо-сайт производителя крафтового кваса",
+            "price": 5900,
+            "img": "./img/img-kvast.jpg"
+        },
+        {
+            "quantity": 1,
+            "id": 5,
+            "title": "A Plus",
+            "description": "Лендинг курсов повышения квалификации",
+            "price": 7900,
+            "img": "./img/img-aplus.jpg"
+        },
+        {
+            "quantity": 1,
+            "id": 6,
+            "title": "Кваст",
+            "description": "Промо-сайт производителя крафтового кваса",
+            "price": 5900,
+            "img": "./img/img-kvast.jpg"
+        },
+        {
+            "quantity": 1,
+            "id": 2,
+            "title": "Pink App",
+            "description": "Продуктовый лендинг приложения для iOS и Android",
+            "price": 10900,
+            "img": "./img/img-pink.jpg"
         }
     ]
 }
