@@ -24,9 +24,8 @@
           <!-- <ul class="cart">
             <li><a href="#">Корзина</a></li>
           </ul> -->
-          <cart 
-            v-bind:cart-items="cartItems"
-            v-on:remove-product="removeProduct" 
+          <cart ref="cart"
+            v-bind:cart-items="cartItems" 
           ></cart>
         </div>
       </nav>
@@ -118,7 +117,7 @@
             </p>
             <products 
               v-bind:products="products"
-              v-on:add-product="addProduct"
+           
             ></products>
             <ul class="pagination-list">
               <li class="pagination-item-current pagination-item"><a href="#">1</a></li>

@@ -14,7 +14,7 @@ const product = {
       <p class="catalog-item-description">{{ item.description }}</p>
       <button 
         class="button catalog-item-price"
-        v-on:click="$parent.$emit('add-product', item)"
+        v-on:click="$emit('add-product', item)"
       >{{ item.price }} руб.</button>
     </div>
   </li>`
@@ -22,17 +22,27 @@ const product = {
 
 const products = {
     components: { product },
-    props: ['products'],
-    // data() {
-    //     return {
-    //         products: []
-    //     }
-    // },
+    // props: ['products'],
+    data() {
+      return {
+        products: []
+      }
+    },
+    mounted(){
+      this.$parent.getJson(`/api/products`)
+          .then(data => {
+              for (let item of data){
+                  this.$data.products.push(item);
+                  //this.$data.filtered.push(item);
+              }
+          });
+    },
     template: `<ul class="catalog-list">
         <product 
             v-for="item of products"
             :key="item.id"
             :item="item"
+            @add-product="$parent.$refs.cart.addProduct"
         ></product>
         </ul>       
         `
